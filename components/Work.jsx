@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { BsGithub } from "react-icons/bs";
+import { FiExternalLink } from "react-icons/fi";
 
 import { Tooltip, TooltipConten, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -45,6 +46,17 @@ const projects = [
         image: "/assets/work/T_A_F.PNG",
         github: "https://github.com/Yansury/Teatro-Apolo/tree/956cee42e3bdcde6639aa4063222d771ab4d3b6d",
     },
+    {
+        num: "04",
+        category: "Full Stack MERN",
+        title: "Teatro Apolo",
+        description: "Página web para gestión de reservas en una sala de cine del Teatro Apolo",
+        stack:
+            [{ name: "Express" }, { name: "MongoDB" }, { name: "NodeJS" }, { name: "NextJS" }],
+        image: "/assets/work/T_A_V.PNG",
+        github: "https://github.com/larum99/teatro_apolo_mern",
+        deploy: "https://teatro-apolo-mern-frontend.vercel.app",
+    },
 ];
 
 const Work = () => {
@@ -79,7 +91,7 @@ const Work = () => {
                             </ul>
                             <div className=""></div>
                         </div>
-                        <div className="">
+                        <div className="flex items-center gap-4 mt-6">
                             <Link href={project.github}>
                                 <TooltipProvider delayDuration={100}>
                                     <Tooltip>
@@ -89,6 +101,17 @@ const Work = () => {
                                     </Tooltip>
                                 </TooltipProvider>
                             </Link>
+                            {project.deploy && (
+                                <Link href={project.deploy}>
+                                    <TooltipProvider delayDuration={100}>
+                                        <Tooltip>
+                                            <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                                                <FiExternalLink className="text-white text-3xl group-hover:text-accent" />
+                                            </TooltipTrigger>
+                                        </Tooltip>
+                                    </TooltipProvider>
+                                </Link>
+                            )}
                         </div>
                     </div>
                     <div className="w-full xl:w-[50%]">
