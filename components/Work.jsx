@@ -57,6 +57,17 @@ const projects = [
         github: "https://github.com/larum99/teatro_apolo_mern",
         deploy: "https://teatro-apolo-mern-frontend.vercel.app",
     },
+    {
+        num: "05",
+        category: "Full Stack MERN",
+        title: "Gestión de Productos",
+        description: "Página web para gestión de Productos",
+        stack:
+            [{ name: "Express" }, { name: "MongoDB" }, { name: "NodeJS" }, { name: "NextJS" }],
+        image: "/assets/work/Captura2.PNG",
+        github: "https://github.com/larum99/products-crud",
+        deploy: "https://portfolio-nine-wine-12.vercel.app/",
+    },
 ];
 
 const Work = () => {
