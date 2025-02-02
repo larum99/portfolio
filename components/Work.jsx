@@ -66,7 +66,7 @@ const projects = [
             [{ name: "Express" }, { name: "MongoDB" }, { name: "NodeJS" }, { name: "NextJS" }],
         image: "/assets/work/Captura2.PNG",
         github: "https://github.com/larum99/products-crud",
-        deploy: "products-crud-mern-frontend.vercel.app",
+        deploy: "https://products-crud-mern-frontend.vercel.app",
     },
 ];
 
