@@ -17,56 +17,235 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
     {
+        id: 1,
         num: "01",
-        category: "frontend",
-        title: "Blog",
-        description: "Diseño de blog basado en el grupo K/DA. Se usan conceptos como CSS GRID, Flexbox y la biblioteca llamada ScrollReveal.",
-        stack:
-            [{ name: "Html 5" }, { name: "CSS 3" }, { name: "JavaScript" }],
-        image: "/assets/work/B.PNG",
-        github: "https://github.com/larum99/html-css",
+
+        title: "Plazoleta",
+        subtitle: "Sistema de gestión de pedidos basado en microservicios",
+
+        category: "Backend",
+
+        role: "Backend Developer",
+
+        architecture: "Arquitectura Hexagonal + Microservicios",
+
+        description:
+            "Sistema para la gestión de restaurantes y pedidos, desarrollado con una arquitectura distribuida basada en microservicios, aplicando principios SOLID y Clean Architecture.",
+
+        features: [
+            "Autenticación y autorización mediante JWT.",
+            "Gestión de usuarios y propietarios.",
+            "Administración de restaurantes y platos.",
+            "Creación y seguimiento de pedidos.",
+            "Notificaciones y trazabilidad del proceso.",
+        ],
+
+        microservices: [
+            "Gestión de Usuarios",
+            "Gestión de Pedidos",
+            "Notificaciones",
+            "Trazabilidad",
+        ],
+
+        stack: [
+            "Java",
+            "Spring Boot",
+            "Spring Data JPA",
+            "MySQL",
+            "Docker",
+            "Swagger",
+            "JWT",
+            "Gradle",
+        ],
+
+        image: "/assets/work/plazoleta.png",
+
+        repositories: [
+            {
+                name: "Gestión de Usuarios",
+                url: "",
+            },
+            {
+                name: "Gestión de Pedidos",
+                url: "",
+            },
+            {
+                name: "Notificaciones",
+                url: "",
+            },
+            {
+                name: "Trazabilidad",
+                url: "",
+            },
+        ],
+
+        deploy: "",
     },
+
     {
+        id: 2,
         num: "02",
-        category: "Lógica de Programación",
-        title: "Teatro Apolo",
-        description: "Gestión de reservas de puestos en la salas del Teatro Apolo mediante un programa en Python",
-        stack:
-            [{ name: "Python" }],
-        image: "/assets/work/T_A.PNG",
-        github: "https://github.com/pio-grupo-6/reserva-sala-cine/tree/626a3b79275220a1dba57ffda1362086f460829d",
+
+        title: "Hogar360",
+
+        subtitle: "Plataforma inmobiliaria",
+
+        category: "Full Stack",
+
+        role: "Backend Developer",
+
+        architecture: "Arquitectura Hexagonal + Microservicios",
+
+        description:
+            "Aplicación inmobiliaria desarrollada mediante microservicios y frontend en Angular para la gestión de propiedades y publicaciones.",
+
+        features: [],
+
+        microservices: [
+            "Gestión de Propiedades",
+            "Publicaciones",
+            "Usuarios",
+        ],
+
+        frontend: "Angular",
+
+        stack: [
+            "Java",
+            "Spring Boot",
+            "Angular",
+            "MySQL",
+            "Docker",
+            "Swagger",
+        ],
+
+        image: "/assets/work/hogar360.png",
+
+        repositories: [
+            {
+                name: "Frontend Angular",
+                url: "",
+            },
+            {
+                name: "Gestión de Propiedades",
+                url: "",
+            },
+            {
+                name: "Publicaciones",
+                url: "",
+            },
+            {
+                name: "Usuarios",
+                url: "",
+            },
+        ],
     },
+
     {
+        id: 3,
         num: "03",
-        category: "frontend",
-        title: "Teatro Apolo",
-        description: "Diseño de página web para gestión de reservas en una sala de cine del Teatro Apolo",
-        stack:
-            [{ name: "Html 5" }, { name: "CSS 3" }, { name: "JavaScript" }],
-        image: "/assets/work/T_A_F.PNG",
-        github: "https://github.com/Yansury/Teatro-Apolo/tree/956cee42e3bdcde6639aa4063222d771ab4d3b6d",
+
+        title: "Proyecto Final Generation",
+
+        subtitle: "Sistema empresarial basado en microservicios",
+
+        category: "Backend",
+
+        role: "Backend Developer",
+
+        architecture: "Microservicios",
+
+        description:
+            "Proyecto desarrollado durante el Bootcamp Full Stack Jr. Java de Generation Colombia.",
+
+        features: [],
+
+        microservices: [],
+
+        stack: [],
+
+        image: "/assets/work/generation.png",
+
+        repositories: [],
     },
+
     {
+        id: 4,
         num: "04",
-        category: "Full Stack MERN",
+
         title: "Teatro Apolo",
-        description: "Página web para gestión de reservas en una sala de cine del Teatro Apolo",
-        stack:
-            [{ name: "Express" }, { name: "MongoDB" }, { name: "NodeJS" }, { name: "NextJS" }],
-        image: "/assets/work/T_A_V.PNG",
-        github: "https://github.com/larum99/teatro_apolo_mern",
-        deploy: "https://teatro-apolo-mern-frontend.vercel.app",
-    },
-    {
-        num: "05",
+
+        subtitle: "Sistema de reservas",
+
         category: "Full Stack MERN",
-        title: "Gestión de Productos",
-        description: "Página web para gestión de Productos",
-        stack:
-            [{ name: "Express" }, { name: "MongoDB" }, { name: "NodeJS" }, { name: "NextJS" }],
-        image: "/assets/work/Captura2.PNG",
-        github: "https://github.com/larum99/products-crud",
-        deploy: "https://products-crud-mern-frontend.vercel.app",
+
+        role: "Full Stack Developer",
+
+        architecture: "MERN",
+
+        description:
+            "Aplicación web para la gestión de reservas de salas de cine.",
+
+        features: [
+            "Autenticación",
+            "Gestión de funciones",
+            "Reserva de asientos",
+        ],
+
+        stack: [
+            "MongoDB",
+            "Express",
+            "React",
+            "Node.js",
+            "Next.js",
+        ],
+
+        image: "/assets/work/teatro.png",
+
+        repositories: [
+            {
+                name: "Repositorio",
+                url: "",
+            },
+        ],
+
+        deploy: "",
+    },
+
+    {
+        id: 5,
+        num: "05",
+
+        title: "AWS Cloud",
+
+        subtitle: "Despliegue de aplicaciones en AWS",
+
+        category: "Cloud",
+
+        role: "Backend Developer",
+
+        architecture: "AWS",
+
+        description:
+            "Proyecto orientado al despliegue y administración de aplicaciones utilizando servicios de AWS.",
+
+        features: [],
+
+        stack: [
+            "AWS",
+            "Docker",
+            "EC2",
+            "RDS",
+            "ECR",
+        ],
+
+        image: "/assets/work/aws.png",
+
+        repositories: [
+            {
+                name: "Repositorio",
+                url: "",
+            },
+        ],
     },
 ];
 
@@ -83,74 +262,272 @@ const Work = () => {
     return (
         <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
-            className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0">
+            animate={{
+                opacity: 1,
+                transition: {
+                    delay: 2.4,
+                    duration: 0.4,
+                    ease: "easeIn",
+                },
+            }}
+            className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+        >
             <div className="container mx-auto">
-                <div className="flex flex-col xl:flex-row xl:gap-[30px
-        ]">
-                    <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-                        <div className="flex flex-col gap-[30px] h-[50%]">
-                            <div className="text-8xl leading-none font-extrabold text-transparent text-outline">{project.num}</div>
-                            <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">Proyecto {project.category}</h2>
-                            <p className="text-white/60">{project.description}</p>
-                            <ul className="flex gap-4">
-                                {project.stack.map((item, index) => {
-                                    return <li key={index} className="text-xl text-accent">{item.name}
-                                        {/* to remove the last comma */}
-                                        {index !== project.stack.length - 1 && ","}</li>
-                                })}
-                            </ul>
-                            <div className=""></div>
-                        </div>
-                        <div className="flex items-center gap-4 mt-6">
-                            <Link href={project.github}>
-                                <TooltipProvider delayDuration={100}>
-                                    <Tooltip>
-                                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                                            <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                                        </TooltipTrigger>
-                                    </Tooltip>
-                                </TooltipProvider>
-                            </Link>
-                            {project.deploy && (
-                                <Link href={project.deploy}>
-                                    <TooltipProvider delayDuration={100}>
-                                        <Tooltip>
-                                            <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                                                <FiExternalLink className="text-white text-3xl group-hover:text-accent" />
-                                            </TooltipTrigger>
-                                        </Tooltip>
-                                    </TooltipProvider>
-                                </Link>
+                <div className="flex flex-col xl:flex-row gap-10">
+
+                    {/* ========= INFORMACIÓN ========= */}
+
+                    <div className="w-full xl:w-1/2">
+
+                        <div className="flex flex-col gap-6">
+
+                            <div className="text-8xl font-extrabold text-transparent text-outline">
+                                {project.num}
+                            </div>
+
+                            <div>
+                                <h2 className="text-5xl font-bold">
+                                    {project.title}
+                                </h2>
+
+                                <p className="text-accent text-xl mt-2">
+                                    {project.subtitle}
+                                </p>
+                            </div>
+
+                            <div className="flex flex-wrap gap-3">
+
+                                <span className="px-4 py-1 rounded-full bg-accent text-primary font-medium">
+                                    {project.category}
+                                </span>
+
+                                <span className="px-4 py-1 rounded-full border border-accent text-accent">
+                                    {project.role}
+                                </span>
+
+                            </div>
+
+                            {/* Arquitectura */}
+
+                            <div>
+
+                                <h3 className="text-xl font-semibold mb-2">
+                                    Arquitectura
+                                </h3>
+
+                                <p className="text-white/70">
+                                    {project.architecture}
+                                </p>
+
+                            </div>
+
+                            {/* Descripción */}
+
+                            <div>
+
+                                <h3 className="text-xl font-semibold mb-2">
+                                    Descripción
+                                </h3>
+
+                                <p className="text-white/70 leading-7">
+                                    {project.description}
+                                </p>
+
+                            </div>
+
+                            {/* Funcionalidades */}
+
+                            {project.features?.length > 0 && (
+
+                                <div>
+
+                                    <h3 className="text-xl font-semibold mb-2">
+                                        Funcionalidades
+                                    </h3>
+
+                                    <ul className="space-y-2">
+
+                                        {project.features.map((feature, index) => (
+
+                                            <li
+                                                key={index}
+                                                className="text-white/70"
+                                            >
+                                                ✔ {feature}
+                                            </li>
+
+                                        ))}
+
+                                    </ul>
+
+                                </div>
+
                             )}
+
+                            {/* Microservicios */}
+
+                            {project.microservices?.length > 0 && (
+
+                                <div>
+
+                                    <h3 className="text-xl font-semibold mb-2">
+                                        Microservicios
+                                    </h3>
+
+                                    <div className="flex flex-wrap gap-2">
+
+                                        {project.microservices.map((service, index) => (
+
+                                            <span
+                                                key={index}
+                                                className="px-3 py-1 rounded-full bg-white/10 text-accent text-sm"
+                                            >
+                                                {service}
+                                            </span>
+
+                                        ))}
+
+                                    </div>
+
+                                </div>
+
+                            )}
+
+                            {/* Tecnologías */}
+
+                            {project.stack?.length > 0 && (
+
+                                <div>
+
+                                    <h3 className="text-xl font-semibold mb-2">
+                                        Tecnologías
+                                    </h3>
+
+                                    <div className="flex flex-wrap gap-2">
+
+                                        {project.stack.map((tech, index) => (
+
+                                            <span
+                                                key={index}
+                                                className="px-3 py-1 rounded-full bg-accent/10 border border-accent text-accent rounded-full text-sm"
+                                            >
+                                                {tech}
+                                            </span>
+
+                                        ))}
+
+                                    </div>
+
+                                </div>
+
+                            )}
+
+                            {/* Repositorios */}
+
+                            {project.repositories?.length > 0 && (
+
+                                <div>
+
+                                    <h3 className="text-xl font-semibold mb-3">
+                                        Repositorios
+                                    </h3>
+
+                                    <div className="flex flex-wrap gap-3">
+
+                                        {project.repositories.map((repo, index) => (
+
+                                            <Link
+                                                href={repo.url}
+                                                target="_blank"
+                                                key={index}
+                                            >
+
+                                                <button
+                                                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-accent hover:text-primary transition-all duration-300"
+                                                >
+
+                                                    <BsGithub />
+
+                                                    {repo.name}
+
+                                                </button>
+
+                                            </Link>
+
+                                        ))}
+
+                                    </div>
+
+                                </div>
+
+                            )}
+
+                            {/* Demo */}
+
+                            {project.deploy && (
+
+                                <Link
+                                    href={project.deploy}
+                                    target="_blank"
+                                >
+
+                                    <button
+                                        className="mt-2 flex items-center gap-2 px-5 py-3 rounded-lg bg-accent text-primary hover:bg-accent/80 transition-all"
+                                    >
+
+                                        <FiExternalLink />
+
+                                        Ver Demo
+
+                                    </button>
+
+                                </Link>
+
+                            )}
+
                         </div>
+
                     </div>
-                    <div className="w-full xl:w-[50%]">
+
+                    {/* ========= IMAGEN ========= */}
+
+                    <div className="w-full xl:w-1/2">
+
                         <Swiper
                             spaceBetween={30}
                             slidesPerView={1}
-                            className="xl:h-[520px] mb-12"
-                            onSlideChange={handleSlideChange}>
-                            {projects.map((project, index) => {
-                                return <SwiperSlide key={index} className="w-full">
-                                    <div className="h-[460px] relative group flex  justify-center items-center">
+                            className="xl:h-[520px]"
+                            onSlideChange={handleSlideChange}
+                        >
 
-                                        <div className="relative w-full h-full">
-                                            <Image src={project.image}
-                                                fill
-                                                className="object-contain"
-                                                alt="">
+                            {projects.map((item) => (
 
-                                            </Image>
-                                        </div>
-                                    </div></SwiperSlide>;
-                            })}
-                            {/* slider buttons */}
+                                <SwiperSlide key={item.id}>
+
+                                    <div className="relative h-[500px] rounded-xl overflow-hidden">
+
+                                        <Image
+                                            src={item.image}
+                                            fill
+                                            alt={item.title}
+                                            className="object-contain"
+                                        />
+
+                                    </div>
+
+                                </SwiperSlide>
+
+                            ))}
+
                             <WorkSliderBtns
                                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all" />
+                                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                            />
+
                         </Swiper>
+
                     </div>
+
                 </div>
             </div>
         </motion.div>
