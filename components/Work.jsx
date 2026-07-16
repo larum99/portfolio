@@ -1,202 +1,105 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState } from "react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { useState } from "react";
 
 import { BsGithub } from "react-icons/bs";
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiCheck, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-import Link from "next/link"
-import Image from "next/image"
-import WorkSliderBtns from "@/components/WorkSliderBtns";
+import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
     {
         id: 1,
         num: "01",
-        title: "Plazoleta",
-        subtitle: "Sistema de gestión de pedidos basado en microservicios",
-        category: "Backend",
-        role: "Backend Developer",
-        architecture: "Arquitectura Hexagonal + Microservicios",
-        description:
-            "Sistema para la gestión de restaurantes y pedidos, desarrollado con una arquitectura distribuida basada en microservicios, aplicando principios SOLID y Clean Architecture.",
-        features: [
-            "Autenticación y autorización mediante JWT.",
-            "Gestión de usuarios y propietarios.",
-            "Administración de restaurantes y platos.",
-            "Creación y seguimiento de pedidos.",
-            "Notificaciones y trazabilidad del proceso.",
-        ],
-        microservices: [
-            "Gestión de Usuarios",
-            "Gestión de Pedidos",
-            "Notificaciones",
-            "Trazabilidad",
-        ],
-        stack: [
-            "Java",
-            "Spring Boot",
-            "Spring Data JPA",
-            "MySQL",
-            "Docker",
-            "Swagger",
-            "JWT",
-            "Gradle",
-        ],
-        image: "/assets/work/plazoleta.png",
-        repositories: [
-            {
-                name: "Gestión de Usuarios",
-                url: "",
-            },
-            {
-                name: "Gestión de Pedidos",
-                url: "",
-            },
-            {
-                name: "Notificaciones",
-                url: "",
-            },
-            {
-                name: "Trazabilidad",
-                url: "",
-            },
-        ],
-        deploy: "",
-    },
-    {
-        id: 2,
-        num: "02",
         title: "Hogar360",
-        subtitle: "Plataforma inmobiliaria",
+        subtitle: "Plataforma inmobiliaria full stack",
         category: "Full Stack",
-        role: "Backend Developer",
-        architecture: "Arquitectura Hexagonal + Microservicios",
+        role: ["Backend Developer", "Frontend Developer"],
+        architecture: "Arquitectura Hexagonal (Puertos y Adaptadores) + Microservicios. Atomic Design + Arquitectura por módulos.",
         description:
-            "Aplicación inmobiliaria desarrollada mediante microservicios y frontend en Angular para la gestión de propiedades y publicaciones.",
-
-        features: [],
+            "Plataforma inmobiliaria orientada al mercado colombiano que permite publicar propiedades, agendar visitas y gestionar reservas. Compuesta por 3 microservicios backend en Java y una aplicación SPA en Angular, comunicados mediante JWT y OpenFeign.",
+        features: [
+            "Autenticación y autorización con JWT y roles (ADMIN / VENDEDOR).",
+            "Gestión de propiedades con búsqueda avanzada y paginación dinámica (JPA Specifications).",
+            "Sistema de publicación programada con tareas cron que activa propiedades automáticamente.",
+            "Agendamiento de visitas con validación de propiedad vía Feign y control de superposición de horarios.",
+            "Reserva de visitas con límite de 2 reservas por espacio y prevención de duplicados.",
+            "Gestión de ubicaciones jerárquicas: Departamento → Ciudad → Sector.",
+            "Frontend SPA con Atomic Design, Angular Material y internacionalización (i18n).",
+            "Unit testing con JUnit 5, Mockito y JaCoCo para cobertura de código.",
+        ],
         microservices: [
-            "Gestión de Propiedades",
-            "Publicaciones",
-            "Usuarios",
+            "hogar360-houses-ms (8090) — Propiedades, categorías y ubicaciones",
+            "hogar360-users-ms (8091) — Autenticación y gestión de usuarios",
+            "hogar360-visits-ms (8092) — Visitas y reservas con OpenFeign",
         ],
-        frontend: "Angular",
         stack: [
-            "Java",
+            "Java 17",
             "Spring Boot",
-            "Angular",
-            "MySQL",
-            "Docker",
+            "Spring Security",
+            "JWT",
+            "Spring Data JPA",
+            "Spring Cloud OpenFeign",
+            "MySQL 8",
+            "Angular 16",
+            "Angular Material",
+            "MapStruct",
             "Swagger",
+            "Gradle",
+            "Jest",
         ],
-        image: "/assets/work/hogar360.png",
+        images: [
+            { src: "/assets/work/hogar360/hogar360.png", alt: "Hogar360 - Panel principal" },
+            { src: "/assets/work/hogar360/hogar360-login.png", alt: "Hogar360 - Login" },
+            { src: "/assets/work/hogar360/hogar360-dashboard-vendedor-categorias.png", alt: "Hogar360 - Panel vendedor" },
+            { src: "/assets/work/hogar360/hogar360-dashboard-vendedor-ubicaciones.png", alt: "Hogar360 - Panel vendedor" },
+            { src: "/assets/work/hogar360/hogar360-dashboard-vendedor-casas.png", alt: "Hogar360 - Panel vendedor" },
+            { src: "/assets/work/hogar360/hogar360-dashboard-vendedor-visitas.png", alt: "Hogar360 - Panel vendedor" },
+            { src: "/assets/work/hogar360/hogar360-dashboard-admin-categorias.png", alt: "Hogar360 - Panel admin" },
+            { src: "/assets/work/hogar360/hogar360-dashboard-admin-ubicaciones.png", alt: "Hogar360 - Panel admin" },
+            { src: "/assets/work/hogar360/hogar360-dashboard-admin-casas.png", alt: "Hogar360 - Panel admin" },
+            { src: "/assets/work/hogar360/hogar360-dashboard-admin-usuarios.png", alt: "Hogar360 - Panel admin" },
+            { src: "/assets/work/hogar360/hogar360-dashboard-admin-visitas.png", alt: "Hogar360 - Panel admin" },
+            { src: "/assets/work/hogar360/hogar360-users.png", alt: "Hogar360 - Users MS" },
+            { src: "/assets/work/hogar360/hogar360-houses.png", alt: "Hogar360 - Houses MS" },
+            { src: "/assets/work/hogar360/hogar360-visits.png", alt: "Hogar360 - Visits MS" },
+        ],
         repositories: [
             {
                 name: "Frontend Angular",
-                url: "",
+                url: "https://github.com/larum99/hogar360-frontend",
             },
             {
-                name: "Gestión de Propiedades",
-                url: "",
+                name: "Users MS",
+                url: "https://github.com/larum99/hogar360-users-ms",
             },
             {
-                name: "Publicaciones",
-                url: "",
+                name: "Houses MS",
+                url: "https://github.com/larum99/hogar360-houses-ms",
             },
             {
-                name: "Usuarios",
-                url: "",
-            },
-        ],
-    },
-    {
-        id: 3,
-        num: "03",
-        title: "Proyecto Final Generation",
-        subtitle: "Sistema empresarial basado en microservicios",
-        category: "Backend",
-        role: "Backend Developer",
-        architecture: "Microservicios",
-        description:
-            "Proyecto desarrollado durante el Bootcamp Full Stack Jr. Java de Generation Colombia.",
-        features: [],
-        microservices: [],
-        stack: [],
-        image: "/assets/work/generation.png",
-        repositories: [],
-    },
-    {
-        id: 4,
-        num: "04",
-        title: "Teatro Apolo",
-        subtitle: "Sistema de reservas",
-        category: "Full Stack MERN",
-        role: "Full Stack Developer",
-        architecture: "MERN",
-        description:
-            "Aplicación web para la gestión de reservas de salas de cine.",
-        features: [
-            "Autenticación",
-            "Gestión de funciones",
-            "Reserva de asientos",
-        ],
-        stack: [
-            "MongoDB",
-            "Express",
-            "React",
-            "Node.js",
-            "Next.js",
-        ],
-        image: "/assets/work/teatro.png",
-        repositories: [
-            {
-                name: "Repositorio",
-                url: "",
-            },
-        ],
-        deploy: "",
-    },
-    {
-        id: 5,
-        num: "05",
-        title: "AWS Cloud",
-        subtitle: "Despliegue de aplicaciones en AWS",
-        category: "Cloud",
-        role: "Backend Developer",
-        architecture: "AWS",
-        description:
-            "Proyecto orientado al despliegue y administración de aplicaciones utilizando servicios de AWS.",
-        features: [],
-        stack: [
-            "AWS",
-            "Docker",
-            "EC2",
-            "RDS",
-            "ECR",
-        ],
-        image: "/assets/work/aws.png",
-        repositories: [
-            {
-                name: "Repositorio",
-                url: "",
+                name: "Visits MS",
+                url: "https://github.com/larum99/hogar360-visits-ms",
             },
         ],
     },
 ];
 
 const Work = () => {
-    const [project, setProject] = useState(projects[0]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [selectedImage, setSelectedImage] = useState(0);
+    const project = projects[currentIndex];
 
-    const handleSlideChange = (swiper) => {
-        //get current slide index
-        const currentIndex = swiper.activeIndex;
-        //update project stat based on current slide index
-        setProject(projects[currentIndex]);
+    const goToPrevious = () => {
+        setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+        setSelectedImage(0);
+    };
+
+    const goToNext = () => {
+        setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+        setSelectedImage(0);
     };
 
     return (
@@ -213,8 +116,42 @@ const Work = () => {
             className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
         >
             <div className="container mx-auto">
+                {projects.length > 1 && (
+                    <div className="flex items-center gap-2 mb-10 overflow-x-auto pb-2">
+                        <button
+                            onClick={goToPrevious}
+                            className="shrink-0 flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 hover:bg-accent hover:text-primary transition-all duration-300"
+                        >
+                            <FiChevronLeft className="text-lg" />
+                        </button>
+
+                        {projects.map((p) => (
+                            <button
+                                key={p.id}
+                                onClick={() => {
+                                    setCurrentIndex(projects.indexOf(p));
+                                    setSelectedImage(0);
+                                }}
+                                className={`shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                                    p.id === project.id
+                                        ? "bg-accent text-primary"
+                                        : "bg-white/10 text-white/60 hover:bg-white/20 hover:text-white"
+                                }`}
+                            >
+                                {p.num} — {p.title}
+                            </button>
+                        ))}
+
+                        <button
+                            onClick={goToNext}
+                            className="shrink-0 flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 hover:bg-accent hover:text-primary transition-all duration-300"
+                        >
+                            <FiChevronRight className="text-lg" />
+                        </button>
+                    </div>
+                )}
+
                 <div className="flex flex-col xl:flex-row gap-10">
-                    {/* ========= INFORMACIÓN ========= */}
                     <div className="w-full xl:w-1/2">
                         <div className="flex flex-col gap-6">
                             <div className="text-8xl font-extrabold text-transparent text-outline">
@@ -232,11 +169,15 @@ const Work = () => {
                                 <span className="px-4 py-1 rounded-full bg-accent text-primary font-medium">
                                     {project.category}
                                 </span>
-                                <span className="px-4 py-1 rounded-full border border-accent text-accent">
-                                    {project.role}
-                                </span>
+                                {project.role.map((r) => (
+                                    <span
+                                        key={r}
+                                        className="px-4 py-1 rounded-full border border-accent text-accent"
+                                    >
+                                        {r}
+                                    </span>
+                                ))}
                             </div>
-                            {/* Arquitectura */}
                             <div>
                                 <h3 className="text-xl font-semibold mb-2">
                                     Arquitectura
@@ -245,7 +186,6 @@ const Work = () => {
                                     {project.architecture}
                                 </p>
                             </div>
-                            {/* Descripción */}
                             <div>
                                 <h3 className="text-xl font-semibold mb-2">
                                     Descripción
@@ -254,52 +194,49 @@ const Work = () => {
                                     {project.description}
                                 </p>
                             </div>
-                            {/* Funcionalidades */}
                             {project.features?.length > 0 && (
                                 <div>
                                     <h3 className="text-xl font-semibold mb-2">
                                         Funcionalidades
                                     </h3>
                                     <ul className="space-y-2">
-                                        {project.features.map((feature, index) => (
+                                        {project.features.map((feature) => (
                                             <li
-                                                key={index}
+                                                key={feature}
                                                 className="text-white/70"
                                             >
-                                                ✔ {feature}
+                                                <FiCheck className="inline mr-1 text-accent" />{feature}
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
                             )}
-                            {/* Microservicios */}
                             {project.microservices?.length > 0 && (
                                 <div>
                                     <h3 className="text-xl font-semibold mb-2">
                                         Microservicios
                                     </h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.microservices.map((service, index) => (
-                                            <span
-                                                key={index}
-                                                className="px-3 py-1 rounded-full bg-white/10 text-accent text-sm"
+                                    <ul className="space-y-2">
+                                        {project.microservices.map((service) => (
+                                            <li
+                                                key={service}
+                                                className="text-white/70"
                                             >
-                                                {service}
-                                            </span>
+                                                <FiCheck className="inline mr-1 text-accent" />{service}
+                                            </li>
                                         ))}
-                                    </div>
+                                    </ul>
                                 </div>
                             )}
-                            {/* Tecnologías */}
                             {project.stack?.length > 0 && (
                                 <div>
                                     <h3 className="text-xl font-semibold mb-2">
                                         Tecnologías
                                     </h3>
                                     <div className="flex flex-wrap gap-2">
-                                        {project.stack.map((tech, index) => (
+                                        {project.stack.map((tech) => (
                                             <span
-                                                key={index}
+                                                key={tech}
                                                 className="px-3 py-1 rounded-full bg-accent/10 border border-accent text-accent text-sm"
                                             >
                                                 {tech}
@@ -308,18 +245,17 @@ const Work = () => {
                                     </div>
                                 </div>
                             )}
-                            {/* Repositorios */}
                             {project.repositories?.length > 0 && (
                                 <div>
                                     <h3 className="text-xl font-semibold mb-3">
                                         Repositorios
                                     </h3>
                                     <div className="flex flex-wrap gap-3">
-                                        {project.repositories.map((repo, index) => (
+                                        {project.repositories.map((repo) => (
                                             <Link
                                                 href={repo.url}
                                                 target="_blank"
-                                                key={index}
+                                                key={repo.url}
                                             >
                                                 <button
                                                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-accent hover:text-primary transition-all duration-300"
@@ -332,7 +268,6 @@ const Work = () => {
                                     </div>
                                 </div>
                             )}
-                            {/* Demo */}
                             {project.deploy && (
                                 <Link
                                     href={project.deploy}
@@ -348,31 +283,39 @@ const Work = () => {
                             )}
                         </div>
                     </div>
-                    {/* ========= IMAGEN ========= */}
-                    <div className="w-full xl:w-1/2">
-                        <Swiper
-                            spaceBetween={30}
-                            slidesPerView={1}
-                            className="xl:h-[520px]"
-                            onSlideChange={handleSlideChange}
-                        >
-                            {projects.map((item) => (
-                                <SwiperSlide key={item.id}>
-                                    <div className="relative h-[500px] rounded-xl overflow-hidden">
-                                        <Image
-                                            src={item.image}
-                                            fill
-                                            alt={item.title}
-                                            className="object-contain"
-                                        />
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                            <WorkSliderBtns
-                                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                    <div className="w-full xl:w-1/2 flex flex-col gap-4">
+                        <div className="relative h-[500px] rounded-xl overflow-hidden">
+                            <Image
+                                src={project.images[selectedImage].src}
+                                fill
+                                alt={project.images[selectedImage].alt}
+                                className="object-contain"
                             />
-                        </Swiper>
+                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent px-6 py-4">
+                                <h2 className="text-2xl font-bold">{project.title}</h2>
+                                <p className="text-white/60 text-sm">{project.images[selectedImage].alt}</p>
+                            </div>
+                        </div>
+                        <div className="w-full max-w-[500px] mx-auto flex gap-3 overflow-x-auto flex-nowrap pb-2">
+                            {project.images.map((img, index) => (
+                                <button
+                                    key={img.src}
+                                    onClick={() => setSelectedImage(index)}
+                                    className={`relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                                        selectedImage === index
+                                            ? "border-accent scale-105"
+                                            : "border-white/10 opacity-50 hover:opacity-80"
+                                    }`}
+                                >
+                                    <Image
+                                        src={img.src}
+                                        fill
+                                        alt={img.alt}
+                                        className="object-cover"
+                                    />
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

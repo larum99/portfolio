@@ -57,9 +57,9 @@ const contact = () => {
           </div> */}
           <div className="flex-1 flex justify-center items-center order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
-              {info.map((item, index) => {
+              {info.map((item) => {
                 return (
-                  <li key={index} className="flex items-center gap-6">
+                  <li key={item.title} className="flex items-center gap-6">
                     <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center ">
                       <div className="text-[28px]">{item.icon}</div>
                     </div>
