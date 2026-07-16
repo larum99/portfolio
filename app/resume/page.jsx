@@ -168,10 +168,10 @@ const skills = {
                     icon: <SiGithub />,
                     name: "GitHub",
                 },
-                {
+               {/*  {
                     icon: <FaDocker />,
                     name: "Docker",
-                },
+                }, */},
                 {
                     icon: <FaAws />,
                     name: "AWS",
