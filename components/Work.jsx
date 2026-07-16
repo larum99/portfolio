@@ -194,6 +194,46 @@ const Work = () => {
                                     {project.description}
                                 </p>
                             </div>
+                            {project.repositories?.length > 0 && (
+                                <div>
+                                    <h3 className="text-xl font-semibold mb-3">
+                                        Repositorios
+                                    </h3>
+                                    <div className="flex flex-wrap gap-3">
+                                        {project.repositories.map((repo) => (
+                                            <Link
+                                                href={repo.url}
+                                                target="_blank"
+                                                key={repo.url}
+                                            >
+                                                <button
+                                                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-accent hover:text-primary transition-all duration-300"
+                                                >
+                                                    <BsGithub />
+                                                    {repo.name}
+                                                </button>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                            {project.stack?.length > 0 && (
+                                <div>
+                                    <h3 className="text-xl font-semibold mb-2">
+                                        Tecnologías
+                                    </h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.stack.map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className="px-3 py-1 rounded-full bg-accent/10 border border-accent text-accent text-sm"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
                             {project.features?.length > 0 && (
                                 <div>
                                     <h3 className="text-xl font-semibold mb-2">
@@ -226,46 +266,6 @@ const Work = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                </div>
-                            )}
-                            {project.stack?.length > 0 && (
-                                <div>
-                                    <h3 className="text-xl font-semibold mb-2">
-                                        Tecnologías
-                                    </h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.stack.map((tech) => (
-                                            <span
-                                                key={tech}
-                                                className="px-3 py-1 rounded-full bg-accent/10 border border-accent text-accent text-sm"
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                            {project.repositories?.length > 0 && (
-                                <div>
-                                    <h3 className="text-xl font-semibold mb-3">
-                                        Repositorios
-                                    </h3>
-                                    <div className="flex flex-wrap gap-3">
-                                        {project.repositories.map((repo) => (
-                                            <Link
-                                                href={repo.url}
-                                                target="_blank"
-                                                key={repo.url}
-                                            >
-                                                <button
-                                                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-accent hover:text-primary transition-all duration-300"
-                                                >
-                                                    <BsGithub />
-                                                    {repo.name}
-                                                </button>
-                                            </Link>
-                                        ))}
-                                    </div>
                                 </div>
                             )}
                             {project.deploy && (
