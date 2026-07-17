@@ -117,10 +117,6 @@ const skills = {
                     name: "Angular",
                 },
                 {
-                    icon: <FaReact />,
-                    name: "React",
-                },
-                {
                     icon: <SiTypescript />,
                     name: "TypeScript",
                 },
