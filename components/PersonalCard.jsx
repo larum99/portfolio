@@ -4,7 +4,7 @@ import { FaGithub, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 const PersonalCard = () => {
     return (
-        <div className="w-full max-w-[380px] rounded-2xl overflow-hidden bg-[#27272c] border border-transparent hover:border-accent transition-all duration-300">
+        <div className="w-full max-w-[380px] rounded-2xl overflow-hidden bg-[#27272c] hover:border hover:border-accent transition-all duration-300">
             <Link
                 href="https://www.linkedin.com/in/laura-barona-saavedra-backend-frontend-software-developer/"
                 target="_blank"
