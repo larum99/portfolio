@@ -106,10 +106,6 @@ const skills = {
                     icon: <SiSpringboot />,
                     name: "Spring Boot",
                 },
-                {
-                    icon: <FaNodeJs />,
-                    name: "Nodejs",
-                },
             ],
         },
 
