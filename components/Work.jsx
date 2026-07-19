@@ -94,7 +94,7 @@ const projects = [
         role: ["Backend Developer"],
         architecture: "Arquitectura de Puertos y Adaptadores (Hexagonal) + Microservicios. Comunicación inter-servicios vía Spring Cloud OpenFeign.",
         description:
-            "Plataforma de food court orientada al mercado colombiano que permite gestionar restaurantes, platos del menú, pedidos con ciclo de vida completo, empleados, notificaciones SMS y trazabilidad de auditoría. Compuesta por 4 microservicios backend en Java, dos bases de datos (MySQL y MongoDB) y notificaciones vía Twilio.",
+            "Plataforma de plazoleta de comidas orientada al mercado colombiano que permite gestionar restaurantes, platos del menú, pedidos con ciclo de vida completo, empleados, notificaciones SMS y trazabilidad de auditoría. Compuesta por 4 microservicios backend en Java, dos bases de datos (MySQL y MongoDB) y notificaciones vía Twilio.",
         features: [
             "Autenticación y autorización con JWT y 4 roles (ADMINISTRADOR, PROPIETARIO, EMPLEADO, CLIENTE).",
             "Gestión de restaurantes con paginación dinámica y validación de NIT único.",
@@ -158,6 +158,7 @@ const projects = [
             },
         ],
     },
+    
 ];
 
 const Work = () => {
@@ -369,7 +370,7 @@ const Work = () => {
                                 <p className="text-white/60 text-sm">{project.images[selectedImage].alt}</p>
                             </div>
                         </div>
-                        <div className="w-full max-w-[500px] mx-auto flex gap-3 overflow-x-auto flex-nowrap pb-2">
+                        <div className="w-full max-w-[500px] mx-auto flex justify-center gap-3 overflow-x-auto flex-nowrap pb-2">
                             {project.images.map((img, index) => (
                                 <button
                                     key={img.src}

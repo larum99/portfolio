@@ -14,6 +14,7 @@ import {
 import {
     SiAngular,
     SiGithub,
+    SiGitlab,
     SiGradle,
     SiJavascript,
     SiMongodb,
@@ -159,6 +160,10 @@ const skills = {
                 {
                     icon: <SiGithub />,
                     name: "GitHub",
+                },
+                {
+                    icon: <SiGitlab />,
+                    name: "GitLab",
                 },
                 {
                     icon: <FaAws />,
