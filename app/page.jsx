@@ -25,7 +25,7 @@ const Home = () => {
             </h1>
 
             <p className="max-w-[600px] mb-9 text-white/80 leading-8">
-              Soy desarrolladora de software con formación en Ingeniería Mecatrónica y experiencia en el desarrollo de aplicaciones backend con Java y Spring Boot, así como interfaces web con Angular. Me interesa construir soluciones escalables aplicando arquitectura hexagonal, microservicios y buenas prácticas de desarrollo, mientras continúo fortaleciendo mis habilidades en tecnologías modernas.
+              Desarrolladora de software con formación en Ingeniería Mecatrónica y experiencia en el desarrollo de aplicaciones backend con Java y Spring Boot, así como interfaces web con Angular. Me interesa construir soluciones escalables aplicando arquitectura hexagonal, microservicios y buenas prácticas de desarrollo, mientras continúo fortaleciendo mis habilidades en tecnologías modernas.
             </p>
 
           </div>
