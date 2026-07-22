@@ -14,6 +14,7 @@ import {
 import {
     SiAngular,
     SiGithub,
+    SiGitlab,
     SiGradle,
     SiJavascript,
     SiMongodb,
@@ -106,10 +107,6 @@ const skills = {
                     icon: <SiSpringboot />,
                     name: "Spring Boot",
                 },
-                {
-                    icon: <FaNodeJs />,
-                    name: "Nodejs",
-                },
             ],
         },
 
@@ -119,10 +116,6 @@ const skills = {
                 {
                     icon: <SiAngular />,
                     name: "Angular",
-                },
-                {
-                    icon: <FaReact />,
-                    name: "React",
                 },
                 {
                     icon: <SiTypescript />,
@@ -169,8 +162,8 @@ const skills = {
                     name: "GitHub",
                 },
                 {
-                    icon: <FaDocker />,
-                    name: "Docker",
+                    icon: <SiGitlab />,
+                    name: "GitLab",
                 },
                 {
                     icon: <FaAws />,
@@ -212,16 +205,16 @@ const resume = () => {
                         <TabsTrigger value="skills">Habilidades</TabsTrigger>
                     </TabsList>
 
-                    <div className="min-h-[70vh] w-full">
-                        <TabsContent value="education" className="w-full">
+                    <div className="h-[900px] w-full">
+                        <TabsContent value="education" className="w-full h-full">
                             <div className="flex flex-col gap-[30px] text-center xl:text-left">
                                 <h3 className="text-4xl font-bold">{education.title}</h3>
                                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p>
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                                        {education.items.map((item, index) => {
+                                        {education.items.map((item) => {
                                             return (
                                                 <li
-                                                    key={index}
+                                                    key={item.degree}
                                                     className="bg-[#27272c] h-auto py-6 px-8 rounded-xl flex flex-col gap-3"
                                                 >
                                                     <span className="text-accent text-sm font-medium">
@@ -247,7 +240,7 @@ const resume = () => {
                                     </ul>
                             </div>
                         </TabsContent>
-                        <TabsContent value="experience" className="w-full">
+                        <TabsContent value="experience" className="w-full h-full">
                             <div className="flex flex-col gap-[30px] text-center xl:text-left">
 
                                 <h3 className="text-4xl font-bold">
@@ -260,9 +253,9 @@ const resume = () => {
 
                                 <ul className="grid grid-cols-1 gap-[30px]">
 
-                                    {experience.items.map((item, index) => (
+                                    {experience.items.map((item) => (
                                         <li
-                                            key={index}
+                                            key={item.position}
                                             className="bg-[#27272c] rounded-xl px-8 py-8 flex flex-col gap-3"
                                         >
                                             <span className="text-accent">
@@ -287,7 +280,7 @@ const resume = () => {
                                 </ul>
                             </div>
                         </TabsContent>
-                        <TabsContent value="skills" className="w-full">
+                        <TabsContent value="skills" className="w-full h-full">
                             <div className="flex flex-col gap-[30px]">
 
                                 <div className="text-center xl:text-left">
@@ -302,9 +295,9 @@ const resume = () => {
 
                                 <div className="space-y-10">
 
-                                    {skills.categories.map((category, categoryIndex) => (
+                                    {skills.categories.map((category) => (
 
-                                        <div key={categoryIndex}>
+                                        <div key={category.title}>
 
                                             <h4 className="text-2xl font-semibold text-accent mb-5">
                                                 {category.title}
@@ -312,13 +305,13 @@ const resume = () => {
 
                                             <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
 
-                                                {category.skills.map((skill, index) => (
+                                                {category.skills.map((skill) => (
 
-                                                    <li key={index}>
+                                                    <li key={skill.name}>
                                                         <TooltipProvider delayDuration={100}>
                                                             <Tooltip>
 
-                                                                <TooltipTrigger className="w-full h-[140px] bg-[#27272c] rounded-xl flex justify-center items-center group transition-all duration-300 hover:border hover:border-accent">
+                                                                <TooltipTrigger className="w-full h-[140px] bg-[#27272c] rounded-xl flex justify-center items-center group transition-all duration-300 cursor-default">
 
                                                                     <div className="text-6xl group-hover:text-accent transition-all duration-300">
                                                                         {skill.icon}

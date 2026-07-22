@@ -14,7 +14,7 @@ const Home = () => {
             </span>
 
             <p className="text-accent mt-2 mb-4">
-              Java • Spring Boot • Arquitectura Hexagonal • Angular
+              Java • Spring Boot • Angular
             </p>
 
             <h1 className="h1 mb-6">
@@ -41,7 +41,7 @@ const Home = () => {
                 size="lg"
                 className="uppercase flex items-center gap-2"
               >
-                <span>Ver CV</span>
+                <span>Ver HdV</span>
                 <FiDownload className="text-xl" />
               </Button>
             </a>
