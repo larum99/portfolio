@@ -31,7 +31,7 @@ const PersonalCard = () => {
                     </p>
 
                     <p className="text-white/50 text-center mt-3 text-sm leading-relaxed">
-                        Desarrolladora de software con experiencia en backend y conocimientos en frontend.
+                        Desarrolladora de software con experiencia en Backend Java y conocimientos en Frontend.
                     </p>
                 </div>
             </Link>
