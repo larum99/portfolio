@@ -32,7 +32,7 @@ const Home = () => {
 
           <div className="flex flex-col xl:flex-row items-center gap-8">
             <a
-              href="/HdV_LBS.pdf"
+              href="/HdV_Laura-Barona-Saavedra.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
